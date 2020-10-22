@@ -5,6 +5,7 @@ import { Text, FlatList } from 'react-native';
 //import { PARTNERS } from '../shared/partners';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
+import Loading from '../components/LoadingComponent';
 
 const mapStateToProps = state => {
     return {
@@ -51,6 +52,27 @@ class About extends Component {
                     //leftAvatar={{ source: require('./images/bootstrap-logo.png') }}
                     leftAvatar={{ source: { uri: baseUrl + item.image } }}
                 />
+            )
+        }
+
+        if (this.props.partners.isLoading) {
+            return (
+                <ScrollView>
+                    <Mission />
+                    <Card title='Community Partners'>
+                        <Loading />
+                    </Card>
+                </ScrollView>
+            )
+        }
+        if (this.props.partners.errMess) {
+            return (
+                <ScrollView>
+                    <Mission />
+                    <Card title='Community Partners'>
+                        <Text>{this.props.partners.errMess}</Text>
+                    </Card>
+                </ScrollView>
             )
         }
 
