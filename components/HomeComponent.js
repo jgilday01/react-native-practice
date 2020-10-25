@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import { Card } from 'react-native-elements';
-//import { CAMPSITES } from '../shared/campsites';
-//import { PROMOTIONS } from '../shared/promotions';
-//import { PARTNERS } from '../shared/partners';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
 import Loading from '../components/LoadingComponent';
@@ -46,17 +43,7 @@ function RenderItem(props) {
 }
 
 class Home extends Component {
-/*
-    constructor(props) {
-        super(props);
-        this.state = {
-            campsites: CAMPSITES,
-            promotions: PROMOTIONS,
-            partners: PARTNERS
-        };
-    }
-*/
-    
+   
     static navigationOptions = {
         title: 'Home'
     }
@@ -84,5 +71,4 @@ class Home extends Component {
     }
 }
 
-//export default Home;
 export default connect(mapStateToProps)(Home);
