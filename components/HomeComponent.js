@@ -31,7 +31,6 @@ function RenderItem(props) {
         return (
             <Card
                 featuredTitle={item.name}
-                //image={require('./images/react-lake.jpg')}
                 image={{ uri: baseUrl + item.image }}>
                 <Text style={{ margin: 10 }}>
                     {item.description}
